@@ -4,8 +4,8 @@
 
 bool checkPrime(uint64_t value) {
     bool flag = true;
-    for (int i = 2; i < value; i++){
-        if (value % i == 0){
+    for (int i = 2; i < value; i++) {
+        if (value % i == 0) {
             flag = false;
             break;
         }
@@ -39,7 +39,7 @@ uint64_t nextPrime(uint64_t value) {
     uint64_t chis;
     for (uint64_t i = value + 1; i < 100000; i++) {
         for (uint64_t j = 2; j < i; j++) {
-            if (i % j == 0){
+            if (i % j == 0) {
                 flag = 0;
                 break;
             }
