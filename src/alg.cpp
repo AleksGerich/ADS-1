@@ -55,8 +55,18 @@ uint64_t nextPrime(uint64_t value) {
 
 uint64_t sumPrime(uint64_t hbound) {
     uint64_t sum = 0;
-    for (uint64_t i = 0; i < hbound; i++) {
-        sum += i;
+    bool flag = 1;
+    for (uint64_t i = 2; i < hbound; i++) {
+        for (uint64_t j = 2; j < i; j++) {
+            if (i % j == 0) {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag == 1) {
+            sum += i;
+        }
+        flag = 1;
     }
     return sum;
 }
